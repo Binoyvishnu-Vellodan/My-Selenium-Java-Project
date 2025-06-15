@@ -13,12 +13,14 @@ import java.net.URL;
             @Test
             public void launchApp() throws MalformedURLException {
                 DesiredCapabilities caps = new DesiredCapabilities();
-                caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-                caps.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
-                caps.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
+                caps.setCapability("appium:platformName","Android");
+                caps.setCapability("appium:automationName","UiAutomator2");
+                caps.setCapability("appium:deviceName","emulator-5554");
+                caps.setCapability("platformVersion","16");
+                caps.setCapability("browserName","Chrome");
                 caps.setCapability("autoGrantPermissions", true);
 
-                AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
+                AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), caps);
                 driver.get("https://www.google.com");
 
                 System.out.println("✅ Chrome launched and navigated to Google");
