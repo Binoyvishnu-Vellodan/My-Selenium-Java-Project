@@ -1,9 +1,8 @@
 package org.string;
 
-import java.util.HashMap;
 import java.util.Scanner;
 
-public class test {
+public class StringReverse {
     public static void main(String args[]){
         System.out.println("Enter the string: ");
         Scanner sc=new Scanner(System.in);

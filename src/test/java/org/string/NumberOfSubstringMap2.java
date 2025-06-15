@@ -1,20 +1,18 @@
 package org.string;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Numberofchar {
+public class NumberOfSubstringMap2 {
 
     public static void main(String args[]){
-        String s="Geethika";
         int count =0;
-        Character MostRepeated=null;
-//        Scanner sc= new Scanner(System.in);
-//        System.out.println("Ether the String: ");
-//        String s=sc.nextLine();
-//        sc.close();
+        char MostRepeated=' ';
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Ether the String: ");
+        String s=sc.nextLine();
+        sc.close();
 
         LinkedHashMap<Character, Integer> map=new LinkedHashMap<>();
         for(char c: s.toCharArray()){
