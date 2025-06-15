@@ -4,7 +4,6 @@
         <classes>
             <class name="org.CoreJava.Ethihad"/> <!-- Fully-qualified class name -->
             <class name="org.CoreJava.AirIndia"/> <!-- Fully-qualified class name -->
-            <class name="org.CoreJava.Switcher"/> <!-- Fully-qualified class name -->
         </classes>
     </test>
 </suite>
