@@ -2,6 +2,8 @@ package org.Appium;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 
@@ -21,10 +23,13 @@ import java.net.URL;
                 caps.setCapability("autoGrantPermissions", true);
 
                 AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), caps);
-                driver.get("https://www.google.com");
-
-                System.out.println("✅ Chrome launched and navigated to Google");
-
+                driver.navigate().to("https://www.kia.ca/en");
+                WebElement SelectProvince=driver.findElement(By.xpath("//select[@name='lang-modal-province']"));
+                SelectProvince.click();
+                WebElement Ontario=driver.findElement(By.xpath("//option[@value='ON']"));
+                Ontario.click();
+                WebElement Update=driver.findElement(By.xpath("//button[text()='Update']"));
+                Update.click();
                 driver.quit();
             }
 
