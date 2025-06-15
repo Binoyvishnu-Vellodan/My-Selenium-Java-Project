@@ -18,7 +18,6 @@ public class Excelread {
         Row row=sheet.getRow(1);
         Cell cell=row.getCell(1);
         System.out.println(cell);
-
         }
 }
 
