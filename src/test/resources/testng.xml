@@ -1,9 +1,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="MySuite">
+<suite name="ParallelTestSuite" parallel="classes" thread-count="2">
     <test name="MyTestGroup">
         <classes>
-            <class name="org.string.NumberofchartinStringTest"/> <!-- Fully-qualified class name -->
-            <class name="org.Selenium.ListenerTest"/> <!-- Fully-qualified class name -->
+            <class name="org.CoreJava.Ethihad"/> <!-- Fully-qualified class name -->
+            <class name="org.CoreJava.AirIndia"/> <!-- Fully-qualified class name -->
         </classes>
     </test>
 </suite>
