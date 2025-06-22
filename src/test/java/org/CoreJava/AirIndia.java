@@ -18,7 +18,7 @@ public class AirIndia implements Flyby{
         driver.get("https://www.airindia.com/in/en.html");
         driver.manage().window().setPosition(new Point(0, 0));
         driver.manage().window().setSize(new Dimension(960, 1080));
-//        driver.quit();
+        driver.quit();
     }
 
     public void speak() {
