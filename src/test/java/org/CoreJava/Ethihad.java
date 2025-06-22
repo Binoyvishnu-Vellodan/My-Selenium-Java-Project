@@ -1,5 +1,7 @@
 package org.CoreJava;
 
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
@@ -14,7 +16,9 @@ public class Ethihad implements Flyby{
 
     public void fly(WebDriver driver) {
         driver.get("https://www.etihad.com/en-ca/");
-        driver.manage().window().maximize();
+        driver.manage().window().setPosition(new Point(0, 0));
+        driver.manage().window().setSize(new Dimension(960, 1080));
+//        driver.quit();
     }
 
     public void speak() {
