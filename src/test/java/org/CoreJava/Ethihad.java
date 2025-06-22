@@ -1,5 +1,6 @@
 package org.CoreJava;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
@@ -9,6 +10,7 @@ import org.testng.annotations.Test;
 public class Ethihad implements Flyby{
     @Test
     public void Flights() {
+        WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         fly(driver);
         speak();
