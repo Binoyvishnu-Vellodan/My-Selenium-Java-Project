@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 public class Ethihad implements Flyby{
-    @Test
+    @Test(groups = "regression")
     public void Flights() {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
