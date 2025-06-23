@@ -1,9 +1,13 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="ParallelTestSuite" parallel="classes" thread-count="2">
-    <test name="MyTestGroup">
+<suite name="RegressionSuite" parallel="classes" thread-count="2">
+    <test name="RegressionTests">
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
         <classes>
             <class name="org.CoreJava.Ethihad"/> <!-- Fully-qualified class name -->
-            <class name="org.CoreJava.AirIndia"/> <!-- Fully-qualified class name -->
         </classes>
     </test>
 </suite>
