@@ -6,8 +6,8 @@
                 <include name="regression"/>
             </run>
         </groups>
-        <classes>
-            <class name="org.CoreJava.Ethihad"/> <!-- Fully-qualified class name -->
-        </classes>
+        <packages>
+            <package name="org"/>
+        </packages>
     </test>
 </suite>

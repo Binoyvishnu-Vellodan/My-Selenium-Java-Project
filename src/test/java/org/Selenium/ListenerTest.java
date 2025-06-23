@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class ListenerTest{
     WebDriver driver;
 
-    @Test
+    @Test(groups = "regression")
     public void failtest(){
         driver=new ChromeDriver();
         ScreenshotListener.driver=driver;
