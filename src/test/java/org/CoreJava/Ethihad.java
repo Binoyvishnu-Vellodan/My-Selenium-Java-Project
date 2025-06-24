@@ -20,7 +20,7 @@ public class Ethihad implements Flyby{
         driver.get("https://www.etihad.com/en-ca/");
         driver.manage().window().setPosition(new Point(0, 0));
         driver.manage().window().setSize(new Dimension(960, 1080));
-        driver.quit();
+        driver.close();
     }
 
     public void speak() {
