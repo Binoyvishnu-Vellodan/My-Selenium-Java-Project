@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="RegressionSuite" parallel="classes" thread-count="2">
+<suite name="RegressionSuite" parallel="false" thread-count="2">
     <test name="RegressionTests">
         <groups>
             <run>
@@ -7,7 +7,10 @@
             </run>
         </groups>
         <packages>
-            <package name="org"/>
+            <package name="org.CoreJava"/>
+            <package name="org.Selenium"/>
+            <package name="org.string"/>
+            <package name="org.Appium"/>
         </packages>
     </test>
 </suite>

@@ -16,7 +16,7 @@ public class ListenerTest{
         ScreenshotListener.driver=driver;
 
         driver.get("https://google.ca");
-        assert driver.getTitle().equals("Wrong title");
+        assert driver.getTitle().equals("Google");
         driver.quit();
     }
 }
