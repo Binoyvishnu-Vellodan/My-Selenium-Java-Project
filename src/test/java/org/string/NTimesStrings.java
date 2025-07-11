@@ -11,6 +11,7 @@ public class NTimesStrings {
         System.out.println("Enter the String: ");
         String s=sc.nextLine();
         StringBuilder output = new StringBuilder();
+
         for(int i=0;i<s.length();i+=2) {
             char c = s.charAt(i);
             int count = Character.getNumericValue(s.charAt(i+1));
