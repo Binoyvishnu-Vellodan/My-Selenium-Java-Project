@@ -1,17 +1,20 @@
 package org.Selenium;
 
-
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class Loger {
+public class Loger{
     static Logger logger= LogManager.getLogger(Loger.class);
+    WebDriver driver = new ChromeDriver();
+
     @Test(groups = "regression")
-    public void Data(){
-        WebDriver driver=new ChromeDriver();
+    public void NewTest(){
         driver.manage().window().maximize();
         driver.get("https://www.google.ca");
         logger.info("Google website is open now");
@@ -31,8 +34,13 @@ public class Loger {
                 logger.error("Log in failed",e);
             }
         }
-        driver.close();
-        driver.quit();
-        logger.info("browser closed");
+    }
+
+    @AfterMethod
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+            System.out.println("✅ Closed driver.");
+        }
     }
 }

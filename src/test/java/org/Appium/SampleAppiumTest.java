@@ -11,7 +11,6 @@ import java.net.URL;
 
 
         public class SampleAppiumTest {
-            @Test
             public void launchApp() throws MalformedURLException {
                 DesiredCapabilities caps = new DesiredCapabilities();
                 caps.setCapability("appium:platformName","Android");

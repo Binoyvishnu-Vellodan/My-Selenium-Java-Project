@@ -1,8 +1,6 @@
 package org.string;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class NumberOfSubstringMap2 {
 
@@ -25,6 +23,12 @@ public class NumberOfSubstringMap2 {
                 MostRepeated=value.getKey();
             }
         }
-        System.out.println("Most repeated Character is: "+MostRepeated);
+        List<Character> result=new ArrayList<>();
+        for(Map.Entry<Character,Integer> entry:map.entrySet()){
+            if(entry.getValue()==count){
+                result.add(entry.getKey());
+            }
+        }
+        System.out.println("The most repeated char(s): " + result + " with count: " + count);
     }
 }
