@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Custom Suite" parallel="false" >
+    <test name="ParallelClasses" parallel="classes" thread-count="2">
+        <classes>
+            <class name="org.CoreJava.AirIndia"/>
+            <class name="org.CoreJava.Ethihad"/>
+        </classes>
+    </test>
+    <test name="RegressionTests">
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="org.Selenium.ListenerTest"/>
+            <class name="org.Selenium.logger"/>
+            <class name="org.Selenium.Loger"/>
+        </classes>
+    </test>
+</suite>
