@@ -1,0 +1,8 @@
+page_name,element_name,locator_type,locator_value
+
+
+SearchPage,Type,xpath,//button[@role='button']
+SearchPage,From,xpath,//span[text()='From']
+SearchPage,To,xpath,//span[text()='To']
+SearchPage,Date,xpath,//span[text()='Depart']
+SearchPage,login_button,xpath,//button[text()='Login']
