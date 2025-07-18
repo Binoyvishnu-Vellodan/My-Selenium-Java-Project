@@ -5,19 +5,19 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigReader {
-    private Properties properties;
+    private static Properties properties = new Properties();
 
-    public ConfigReader() {
+    static {
         try {
-            FileInputStream fis = new FileInputStream("src/test/resources/config/config.properties");
-            properties = new Properties();
+            String path = System.getProperty("user.dir") + "/src/test/resources/config/config.properties";
+            FileInputStream fis = new FileInputStream(path);
             properties.load(fis);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Failed to load config.properties", e);
         }
     }
 
-    public String getProperty(String key) {
+    public static String getProperty(String key) {
         return properties.getProperty(key);
     }
 }

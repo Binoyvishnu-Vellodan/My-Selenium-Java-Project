@@ -20,13 +20,12 @@ public class NumberOfSubstringMap2 {
             System.out.println(value.getKey()+":"+value.getValue());
             if (value.getValue()>count){
                 count=value.getValue();
-                MostRepeated=value.getKey();
             }
         }
         List<Character> result=new ArrayList<>();
-        for(Map.Entry<Character,Integer> entry:map.entrySet()){
-            if(entry.getValue()==count){
-                result.add(entry.getKey());
+        for(Map.Entry<Character,Integer> value:map.entrySet()){
+            if(value.getValue()==count){
+                result.add(value.getKey());
             }
         }
         System.out.println("The most repeated char(s): " + result + " with count: " + count);

@@ -7,10 +7,10 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.*;
 
-public class ExcelReader {
+public class ExcelUtils {
     private Workbook workbook;
 
-    public ExcelReader(String filePath) {
+    public ExcelUtils(String filePath) {
         try {
             FileInputStream fis = new FileInputStream(filePath);
             workbook = new XSSFWorkbook(fis);
@@ -31,10 +31,33 @@ public class ExcelReader {
             Map<String, String> dataMap = new HashMap<>();
             for (int col = 0; col < headerRow.getLastCellNum(); col++) {
                 String key = headerRow.getCell(col).getStringCellValue();
-                String value = row.getCell(col).getStringCellValue();
+                Cell cell = row.getCell(col);
+
+                String value = "";
+                if (cell != null) {
+                    switch (cell.getCellType()) {
+                        case STRING:
+                            value = cell.getStringCellValue();
+                            break;
+                        case NUMERIC:
+                            value = String.valueOf(cell.getNumericCellValue());
+                            break;
+                        case BOOLEAN:
+                            value = String.valueOf(cell.getBooleanCellValue());
+                            break;
+                        case FORMULA:
+                            value = cell.getCellFormula();
+                            break;
+                        default:
+                            value = "";
+                    }
+                }
                 dataMap.put(key, value);
             }
-            dataList.add(dataMap);
+            // ✅ Only add if "Check" = "Yes"
+            if ("Yes".equalsIgnoreCase(dataMap.get("Check"))) {
+                dataList.add(dataMap);
+            }
         }
 
         Object[][] result = new Object[dataList.size()][1];
@@ -43,4 +66,5 @@ public class ExcelReader {
         }
         return result;
     }
+
 }
