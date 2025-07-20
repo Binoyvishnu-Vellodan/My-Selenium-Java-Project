@@ -1,5 +1,20 @@
 page_name,element_name,locator_type,locator_value
 
+HomePage,JoinNow,xpath,//img[@class='banner-image']
+
+RegistrationPage,GoToRegistration,xpath,//a[text()='Go To Registration ']
+RegistrationPage,FirstName,id,first-name
+RegistrationPage,LastName,id,last-name
+RegistrationPage,Email,id,email
+RegistrationPage,Mobile,id,mobile
+RegistrationPage,Country,id,country
+RegistrationPage,City,id,city
+RegistrationPage,Message,id,message
+
+ElementsPage,Elements,xpath,//div[@class='card-body']//h5[text()='Elements']
+ElementsPage,TextBox,id,item-0
+
+
 
 SearchPage,Type,xpath,//button[@role='button']
 SearchPage,From,xpath,//span[text()='From']

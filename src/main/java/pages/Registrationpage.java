@@ -1,51 +1,33 @@
 package pages;
 
+import base.Basepage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utils.CsvUtil;
 
-public class Registrationpage {
+import java.util.Map;
+
+public class Registrationpage extends Basepage {
     public WebDriver driver;
 
-    public void Registrationpage(WebDriver driver) {
-        this.driver = driver;
+    public Registrationpage(WebDriver driver, Map<String, String> data) {
+        super(driver, data);  // Call to Basepage constructor
     }
-
-    // Locators from CSV
-    By usernameField = CsvUtil.getBy("LoginPage", "Username");
-    By passwordField = CsvUtil.getBy("LoginPage", "Password");
-    By loginButton = CsvUtil.getBy("LoginPage", "LoginButton");
 
     // Actions
 
     public void gotoRegistration() {
-        driver.findElement(loginButton).click();
+        waitForElement("RegistrationPage", "GoToRegistration", 10);
+        doClick("RegistrationPage","GoToRegistration");
     }
 
-    public void enterFirstname(String username) {
-        driver.findElement(usernameField).sendKeys(username);
+    public void enterUserDetails() {
+        doSendKeys("RegistrationPage", "FirstName", "FirstName");
+        doSendKeys("RegistrationPage", "LastName", "LastName");
+        doSendKeys("RegistrationPage", "Email", "Email");
+        doSendKeys("RegistrationPage", "Mobile", "Mobile");
+        doDropdownSelection("RegistrationPage", "Country", "Country");
+        doSendKeys("RegistrationPage", "City", "City");
+        doSendKeys("RegistrationPage", "Message", "Message");
     }
-
-    public void enterLastname(String Lastname) {
-        driver.findElement(usernameField).sendKeys(username);
-    }
-
-    public void enterEmail(String password) {
-        driver.findElement(passwordField).sendKeys(password);
-    }
-    public void enterMobile(String password) {
-        driver.findElement(passwordField).sendKeys(password);
-    }
-
-    public void clickLogin() {
-        driver.findElement(loginButton).click();
-    }
-
-    public void login(String user, String pass) {
-        gotoRegistration();
-        enterFirstname(pass);
-        enterLastname(name);
-        clickLogin();
-    }
-
 }

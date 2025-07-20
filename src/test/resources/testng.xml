@@ -2,8 +2,8 @@
 <suite name="Custom Suite" parallel="false" >
     <test name="ParallelClasses" parallel="classes" thread-count="2">
         <classes>
-            <class name="org.ParallelTest.AirIndia"/>
-            <class name="org.ParallelTest.Ethihad"/>
+<!--            <class name="org.ParallelTest.AirIndia"/>-->
+<!--            <class name="org.ParallelTest.Ethihad"/>-->
         </classes>
     </test>
     <test name="RegressionTests">
@@ -16,6 +16,7 @@
             <class name="org.Selenium.ListenerTest"/>
             <class name="org.Selenium.logger"/>
             <class name="org.Selenium.Loger"/>
+            <class name="org.tests.RegistrationTest"/>
         </classes>
     </test>
 </suite>

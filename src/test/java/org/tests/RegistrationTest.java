@@ -1,20 +1,23 @@
 package org.tests;
 
+
+import org.Dataproviders.ExcelDataProvider;
 import org.base.BaseTest;
 import org.testng.annotations.Test;
+import pages.Homepage;
 import pages.Registrationpage;
 
+import java.util.Map;
+
 public class RegistrationTest extends BaseTest {
-    @Test
-    public void validLoginTest() {
-        Registrationpage registrationpage = new Registrationpage(driver);
+    @Test(dataProvider = "excelData", dataProviderClass = ExcelDataProvider.class)
+    public void testRegistration(Map<String, String> data) {
+        Homepage home = new Homepage(driver, data);
+        home.openUrl();
+        home.clickJoinNow(); // Open and switch to new window
 
-        // Navigate to site
-        registrationpage.driver.get("https://example.com/login");
-
-        // Login with test data
-        registrationpage.login("testuser", "password123");
-
-        // You can add asserts here to verify login success
+        Registrationpage reg = new Registrationpage(driver, data);
+        reg.gotoRegistration();
+        reg.enterUserDetails();
     }
 }
