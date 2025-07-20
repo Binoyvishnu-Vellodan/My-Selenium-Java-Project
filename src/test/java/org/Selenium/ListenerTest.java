@@ -1,27 +1,16 @@
 package org.Selenium;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
+import org.Base.BaseSamples;
 import org.testng.annotations.Test;
 
 
-public class ListenerTest {
-    WebDriver driver = new ChromeDriver();
-//    @Test(groups = "regression")
-//    public void failtest(){
-//        driver.get("https://google.ca");
-//        assert driver.getTitle().equals("Yahoo");
-//    }
+
+public class ListenerTest extends BaseSamples {
+
     @Test(groups = "regression")
-    public void passtest() {
-        driver.get("https://google.ca");
+    public void passTest() {
+        setUp();
+        driver.get("https://www.google.com");
         assert driver.getTitle().equals("Google");
-    }
-    @AfterMethod
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-            System.out.println("✅ Closed driver.");
-        }
+        tearDown();
     }
 }

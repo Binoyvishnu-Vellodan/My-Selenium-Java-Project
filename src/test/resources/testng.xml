@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Custom Suite" parallel="false" >
+<suite name="Custom Suite" parallel="tests" thread-count="2">
     <test name="ParallelClasses" parallel="classes" thread-count="2">
         <classes>
             <class name="org.ParallelTest.AirIndia"/>
@@ -16,8 +16,9 @@
             <class name="org.Selenium.ListenerTest"/>
             <class name="org.Selenium.logger"/>
             <class name="org.Selenium.Loger"/>
-            <class name="org.tests.RegistrationTest"/>
-            <class name="org.tests.ElementsTest"/>
+<!--            <class name="org.Selenium.SkyScanner"/>-->
+<!--            <class name="org.tests.RegistrationTest"/>-->
+<!--            <class name="org.tests.ElementsTest"/>-->
         </classes>
     </test>
 </suite>

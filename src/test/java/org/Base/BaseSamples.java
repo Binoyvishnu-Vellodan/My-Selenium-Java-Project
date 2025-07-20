@@ -1,30 +1,30 @@
 package org.Base;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import java.time.Duration;
-
-public class BaseSample {
+public class BaseSamples {
     protected WebDriver driver;
 
     @BeforeMethod
     public void setUp() {
-        String baseUrl = "https://www.google.ca";
-
-        // Initialize WebDriver
-        driver = new ChromeDriver(); // You can use WebDriverManager if needed
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
-        driver.get(baseUrl);
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        System.out.println("✅ Driver initialized.");
     }
 
     @AfterMethod
     public void tearDown() {
         if (driver != null) {
             driver.quit();
+            System.out.println("✅ Driver quit.");
         }
+    }
+    // 👇 Add this method here
+    public void openUrl(String url) {
+        driver.get(url);
     }
 }

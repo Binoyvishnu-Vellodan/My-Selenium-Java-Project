@@ -1,23 +1,30 @@
 package org.Selenium;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.Base.BaseSamples;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class Loger{
+import java.time.Duration;
+
+public class Loger extends BaseSamples {
     static Logger logger= LogManager.getLogger(Loger.class);
-    WebDriver driver = new ChromeDriver();
 
     @Test(groups = "regression")
-    public void NewTest(){
+    public void NewTest() throws InterruptedException {
+        setUp();
+        driver.get("https://www.google.com");
         driver.manage().window().maximize();
-        driver.get("https://www.google.ca");
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("APjFqb")));
+        searchBox.sendKeys("Java");
+        Thread.sleep(Long.parseLong("3000"));
         logger.info("Google website is open now");
+        tearDown();
         try {
             int a = 5;
             int b = a / 0;
@@ -33,14 +40,6 @@ public class Loger{
             catch (Exception e){
                 logger.error("Log in failed",e);
             }
-        }
-    }
-
-    @AfterMethod
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-            System.out.println("✅ Closed driver.");
         }
     }
 }

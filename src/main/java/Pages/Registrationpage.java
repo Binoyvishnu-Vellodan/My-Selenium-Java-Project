@@ -1,9 +1,7 @@
-package pages;
+package Pages;
 
-import base.Basepage;
-import org.openqa.selenium.By;
+import basePage.Basepage;
 import org.openqa.selenium.WebDriver;
-import utils.CsvUtil;
 
 import java.util.Map;
 
