@@ -4,14 +4,15 @@ import base.Basepage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class Elementspage extends Basepage {
-    private By formsLink = By.xpath("//a[text()='Forms']");
+import java.util.Map;
 
-    public Elementspage(WebDriver driver) {
-        super(driver);
+public class Elementspage extends Basepage {
+
+    public Elementspage(WebDriver driver, Map<String, String> data) {
+        super(driver, data);
     }
 
-    public void clickFormsLink() {
-        driver.findElement(formsLink).click();
+    public void clickElementsLink() {
+        doClick("ElementsPage", "Elements");
     }
 }
