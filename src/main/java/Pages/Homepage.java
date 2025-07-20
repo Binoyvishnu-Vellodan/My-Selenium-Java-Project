@@ -1,6 +1,6 @@
-package pages;
+package Pages;
 
-import base.Basepage;
+import basePage.Basepage;
 import org.openqa.selenium.WebDriver;
 import java.util.Map;
 
