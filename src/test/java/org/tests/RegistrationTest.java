@@ -1,8 +1,8 @@
 package org.tests;
 
 
-import org.Dataproviders.ExcelDataProvider;
-import org.base.BaseTest;
+import org.Dataprovider.ExcelDataProvider;
+import org.Base.BaseTest;
 import org.testng.annotations.Test;
 import pages.Homepage;
 import pages.Registrationpage;

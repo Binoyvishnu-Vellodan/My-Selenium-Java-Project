@@ -1,4 +1,4 @@
-package org.Dataproviders;
+package org.Dataprovider;
 
 import org.testng.annotations.DataProvider;
 import utils.ExcelUtils;
